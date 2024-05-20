@@ -1,0 +1,40 @@
+Resumiendo, tanto como OpenMP, MPI y Multiprocesamiento, caen bajo
+la categoría MIMD de la taxonomía de Flynn. Todos ellos implican 
+múltiples instrucciones simultáneas que operan en múltiples flujos
+de datos. Sin embargo, la forma en que logran este paralelismo
+difiere según su diseño y casos de uso.
+
+	- OpenMP utiliza memoria compartida.
+	- MPI usa paso de mensajes.
+	- Multiprocessing usa una o varias CPU con varios núcleos.
+
+JUSTIFICACIÓN:
+
+OpenMP (Open Multi-Processing):
+	OpenMP es una API que admite la programación paralela de memoria
+	compartida multiplataforma en C, C++ y Fortran. Se utiliza
+	principalmente en sistemas con memoria compartida donde varios
+	procesadores pueden acceder a toda la memoria como global. Esto
+	se incluye en la categoría MIMD, ya que permite múltiples
+	subprocesos simultáneos de ejecución (múltiples instrucciones)
+	que operan en diferentes puntos de datos (múltiples datos).
+
+MPI (Message Passing Interface):
+	MPI es un sistema de paso de mensajes estandarizado y portátil
+	diseñado para funcionar en una amplia variedad de arquitecturas
+	de computación paralela. Implica múltiples tareas que pueden
+	estar en el mismo o en diferentes sistemas, y se comunican entre
+	sí a través de mensajes. MPI también entra en la categoría MIMD,
+	ya que permite que varios procesadores autónomos ejecuten
+	simultáneamente diferentes instrucciones en diferentes datos.
+
+Multiprocesamiento:
+	El multiprocesamiento se refiere a la capacidad de un sistema
+	informático para soportar más de un proceso (programa) al mismo
+	tiempo. Los sistemas operativos de multiprocesamiento permiten
+	que varios programas se ejecuten simultáneamente. Esto se puede
+	lograr a través de varias CPU o a través de una sola CPU que tenga
+	varios núcleos. Al igual que OpenMP y MPI, el multiprocesamiento
+	también entra en la categoría MIMD, ya que implica que varias CPU
+	o núcleos ejecuten diferentes instrucciones en diferentes datos
+	simultáneamente.
